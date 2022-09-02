@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "name": "component_gen",
+  "main": "app.js",
+  "author": "GeorgyDev11111",
+  "type": "module"
+}
