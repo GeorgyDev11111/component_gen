@@ -1,4 +1,4 @@
-import "./$Name.css"
+import "./$style"
 
 const $Name = () => {
   return (

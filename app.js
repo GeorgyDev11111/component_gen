@@ -1,4 +1,4 @@
-import { Component } from "./src/GenerateComponent.js"
+import { Component } from "./src/Component.js"
 
 // создаём компонент
 new Component().generate()
