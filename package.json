@@ -1,7 +1,9 @@
 {
-  "version": "0.1.0",
+  "type": "module",
+  "version": "0.2.0",
   "name": "component_gen",
-  "main": "app.js",
   "author": "GeorgyDev11111",
-  "type": "module"
+  "bin": {
+    "component_gen": "./bin/index.js"
+  }
 }

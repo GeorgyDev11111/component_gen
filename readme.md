@@ -1,34 +1,55 @@
-  ## Генирация компонентов jsx
+ ## Component Generator
+
+ ##### Example:
+```pwsh
+component_gen -c=name
+```
+
+```
+|-- components
+   |-- name
+      |-- Name.jsx
+      |-- name.css
+```
+
+ >Install locally:
+
+ 1. `git clone <this repo>`
+ 2. `cd component_gen`
+ 3. `npm link`
+
+ >Uninstall:
+
+ ```pwsh
+ npm unlink component_gen
+ ```
+
+## Flags and Aliases
+File name
+```pwsh
+--component=name as -c=name
+```
+Component extension
+```pwsh
+--ext=extname as -e=extname
+```
+Style extension
+```pwsh
+--style-type=extname as -st=extname
+```
+
+## Nested folders support
 
 ```pwsh
-node app.js --component=<Name> 
+component_gen -c=folder/component
 ```
 ```
-|-- components 
-   |-- <Name> 
-      |-- <Name>.jsx 
-      |-- <Name>.css
-``` 
-
-```pwsh
-node app.js --component=<Name> --style-type=<ext> 
-```
-```
-|-- components 
-   |-- <Name> 
-      |-- <Name>.jsx 
-      |-- <Name>.<ext> 
-``` 
-
-## Alias
-
-```pwsh
---component=<Name> as -c=<Name> 
+|-- components
+   |-- folder
+      |-- component
+         |-- Component.jsx
+         |-- component.css
 ```
 
-```pwsh
---style-type=<ext> as -st=<ext> 
-```
-
- ### Примечания:
-* Исполняемый файл можно запускать из любого места, всё будет работать
+ ### Notes:
+* The executable file can be run from anywhere

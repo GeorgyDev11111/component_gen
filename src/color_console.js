@@ -5,9 +5,9 @@ const cyan = "\x1b[36m"
 const reset = "\x1b[0m"
 
 export {
-  red,
-  blue,
-  green,
-  cyan,
-  reset
+	red,
+	blue,
+	green,
+	cyan,
+	reset
 }

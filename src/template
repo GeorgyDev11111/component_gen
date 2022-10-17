@@ -1,11 +1,11 @@
 import "./$style"
 
 const $Name = () => {
-  return (
-    <div>
+	return (
+		<div>
 
-    </div>
-  )
+		</div>
+	)
 }
 
 export default $Name
