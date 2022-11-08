@@ -1,9 +1,15 @@
 {
   "type": "module",
-  "version": "0.2.0",
-  "name": "component_gen",
-  "author": "GeorgyDev11111",
+  "version": "0.3.2",
+  "name": "gen-component",
+  "license": "MIT",
+  "homepage": "https://github.com/GeorgyDev11111/gen-component",
+  "author": "Anufriev Georgy (https://github.com/GeorgyDev11111)",
+  "repository": "GeorgyDev11111/gen-component",
+  "bugs": {
+    "url": "https://github.com/GeorgyDev11111/gen-component/issues"
+  },
   "bin": {
-    "component_gen": "./bin/index.js"
+    "gen-component": "./bin/index.js"
   }
 }

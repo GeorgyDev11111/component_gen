@@ -22,7 +22,7 @@ class Component {
 	#style_file_name = `style.${this.#style_type}`.toLowerCase()
 	#full_path = `components/${this.#path_inside_components}`.toLowerCase()
 	#success_msg = `${green}Success:${reset} [ Component: ${blue}${this.#path_inside_components}${reset} created! ]`
-	
+
 
 	#get_inner_path() {
 		const path = utils.findArg([/^--component=.+$/,/^-c=.+$/])
@@ -46,7 +46,7 @@ class Component {
 	#argument_index () {
 		return utils.findArg([/^--index$/,/^-i$/]) ? true : false
 	}
-	
+
 	// templates
 	async #getTemplate () {
 		const template = await readFile(join(__dirname , "templates", "template"))

@@ -1,59 +1,65 @@
- ## Component Generator
+# Component generator
 
- ##### Example:
-```pwsh
-component_gen -c=name
-```
+Simple component generator for React js.
 
+**Example**:
+```console
+$ gen-component -c=name
 ```
+```console
 |-- components
    |-- name
       |-- Name.jsx
       |-- style.css
 ```
 
- >Install locally:
+## Links
 
- 1. `git clone <this repo>`
- 2. `cd component_gen`
- 3. `npm link`
+* [Install](#install)
+* [Flags and Aliases](#flags-and-aliases)
+* [Subfolders](#subfolders)
+* [Npm script](#npm-script)
 
- >Uninstall:
+## Install
+Install with [npm](https://www.npmjs.com/)
 
- ```pwsh
- npm unlink component_gen
- ```
+```console
+$ npm i gen-component -g
+```
 
 ## Flags and Aliases
 File name
 > name for component, !required
-```pwsh
+```console
 --component=name as -c=name
 ```
 Component extension
-> ext name for component, default = jsx
-```pwsh
+> extension name for component, by default equals `jsx`
+```console
 --ext=extname as -e=extname
 ```
-Style extension
-> style ext name or null for remove file styles, default = css
-```pwsh
+File is style
+> `extension name` for style, by default equals `css`
+```console
 --style-type=extname as -st=extname
+```
 or
+> `null` for remove file
+```console
 --style-type=null as -st=null
 ```
 Index file:
-> create index file with export, default = not exist
-```pwsh
+> create index file with export, by default not exist
+```console
 --index as -i
 ```
 
-## Nested folders support
+## Subfolders
 
-```pwsh
-component_gen -c=folder/component
+```console
+$ gen-component -c=folder/component
 ```
-```
+```console
 |-- components
    |-- folder
       |-- component
@@ -61,24 +67,24 @@ component_gen -c=folder/component
          |-- style.css
 ```
 
-### npm script
-##### Example:
+## Npm script
+ **Example**:
 
-```
+File: `package.json`
+
+```console
 "scripts": {
-   "create": "component_gen -i -e=tsx -st=scss" 
+   "create": "gen-component -i -e=tsx -st=scss" 
 }
 ```
-`npm run create -- -c=name`
-
+```console
+$ npm run create -- -c=name
 ```
+
+```console
 |-- components
    |-- name
       |-- Name.tsx
       |-- style.scss
       |-- index.ts
-
 ```
-
-### Notes:
-* The executable file can be run from anywhere
