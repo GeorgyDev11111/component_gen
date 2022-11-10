@@ -1,6 +1,6 @@
 $style
 
-const $Name = () => {
+const $name = () => {
 	return (
 		<div>
 
@@ -8,4 +8,4 @@ const $Name = () => {
 	)
 }
 
-export default $Name
+export default $name

@@ -2,7 +2,7 @@ import { exit, argv } from "process"
 
 
 class Utils {
-	upperFirstLetter(string) {
+	toUpperFirstLetter(string) {
 		return string[0].toUpperCase() + string.slice(1);
 	}
 
@@ -13,19 +13,19 @@ class Utils {
 		}
 	}
 
-	success_log(msg) {
+	successLog(msg) {
 		console.log(msg)
 		exit(0)
 	}
 
-	#find_command(regexp) {
-		return argv.filter((el) => (
-			el.match(regexp[0]) || el.match(regexp[1])
-		)).toString()
+	#find_command(regexps) { //: string | undefined
+		return argv.filter((el) =>
+			regexps.find((regexp) => el.match(regexp))
+		)[0]?.toString()
 	}
 
 	findArg (regexp) {
-		const command = this.#find_command(regexp)
+		const command = this.#find_command(regexp) || ""
 		return command.slice(command.indexOf("=") + 1) 	// --key=value -> value
 	}
 }
