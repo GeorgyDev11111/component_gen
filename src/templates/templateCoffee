@@ -1,0 +1,8 @@
+$style
+
+$name = () =>
+    <div>
+
+    </div>
+
+export default $name

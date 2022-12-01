@@ -35,6 +35,8 @@ File name
 ```
 Component extension
 > extension name for component, by default equals `jsx`
+
+> 3 variants: "jsx", "tsx", "coffee"
 ```console
 --ext=extname as -e=extname
 ```
@@ -52,6 +54,11 @@ Index file:
 > create index file with export, by default not exist
 ```console
 --index as -i
+```
+
+Root dir where finds folder "components"
+```console
+--root=src as -r=src
 ```
 
 ## Subfolders
@@ -74,7 +81,7 @@ File: `package.json`
 
 ```console
 "scripts": {
-   "create": "gen-component -i -e=tsx -st=scss" 
+   "create": "gen-component -i -e=tsx -st=scss -r=src"
 }
 ```
 ```console
@@ -82,9 +89,10 @@ $ npm run create -- -c=name
 ```
 
 ```console
-|-- components
-   |-- name
-      |-- Name.tsx
-      |-- style.scss
-      |-- index.ts
+|-- src
+   |-- components
+      |-- name
+         |-- Name.tsx
+         |-- style.scss
+         |-- index.ts
 ```

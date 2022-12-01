@@ -21,12 +21,13 @@ class Component {
 	#arg_path  = this.#find_arg_path()
 	#arg_style = this.#find_arg_style()
 	#arg_index = this.#find_arg_index()
+	#arg_root  = this.#find_arg_root()
 
     #err_message = `${red}Error:${reset} [ ${red}invalid arguments${reset} May be ${cyan}switching language keyboard${reset} help you ]`
 	#path_inside_components = this.#get_inner_path()
 	#file_name = this.#path_inside_components.split("/").at(-1)
 
-	#full_path       = `components/${this.#path_inside_components}`.toLowerCase()
+	#full_path       = `${this.#arg_root }/components/${this.#path_inside_components}`.toLowerCase()
 	#success_msg     = `${green}Success:${reset} [ Component: ${blue}${this.#path_inside_components}${reset} created! ]`
 	#js_file_name    = `${this.#file_name}.${this.#arg_ext}`
 	#style_file_name = `style.${this.#arg_style}`.toLowerCase()
@@ -48,7 +49,7 @@ class Component {
 	}
 
 	#find_arg_ext () {
-		return utils.findArg([/^--ext=.+$/,/^-e=.+$/]) === "tsx" ? "tsx" : "jsx"
+		return utils.findArg([/^--ext=.+$/,/^-e=.+$/]) === "tsx" ? "tsx" : "coffee" ? "coffee" : "jsx"
 	}
 
 	#find_arg_index () {
@@ -59,9 +60,14 @@ class Component {
 		return utils.findArg([/^--component=.+$/,/^-c=.+$/])
 	}
 
+	#find_arg_root () {
+		let arg =  utils.findArg([/^--root=.+$/,/^-r=.+$/])
+		return (/^[a-z0-9]+$/).test(arg) ? arg : utils.error(`${red}Error:${reset} [ ${cyan}argument "root" is invalid${reset} ]`)
+	}
+
 	// templates
-	async #get_template () {
-		const template = await readFile(join(__dirname , this.#templates_folder, "template"))
+	async #get_template_component (name) {
+		const template = await readFile(join(__dirname , this.#templates_folder, name))
 
 		const replacement = () =>
 			this.#arg_style !== this.#arg_empty_style
@@ -86,7 +92,8 @@ class Component {
 	}
 
 	async #create_file_component () {
-		const template = await this.#get_template()
+		const template_name = this.#arg_ext === "coffee" ? "templateCoffee" : "template"
+		const template = await this.#get_template_component(template_name)
 		const file_name = join(cwd(), this.#full_path, this.#js_file_name)
 		await writeFile(file_name, template)
 	}

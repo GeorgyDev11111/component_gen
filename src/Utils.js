@@ -13,6 +13,11 @@ class Utils {
 		}
 	}
 
+	error (msg) {
+		console.log(msg)
+		exit(1)
+	}
+
 	successLog(msg) {
 		console.log(msg)
 		exit(0)
