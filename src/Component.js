@@ -49,7 +49,8 @@ class Component {
 	}
 
 	#find_arg_ext () {
-		return utils.findArg([/^--ext=.+$/,/^-e=.+$/]) === "tsx" ? "tsx" : "coffee" ? "coffee" : "jsx"
+		const arg = utils.findArg([/^--ext=.+$/,/^-e=.+$/])
+		return arg === "tsx" ? "tsx" : arg === "coffee" ? "coffee" : arg === "jsx" ? "jsx" : "tsx"
 	}
 
 	#find_arg_index () {
