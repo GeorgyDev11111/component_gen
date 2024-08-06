@@ -1,13 +1,13 @@
 {
   "type": "module",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "name": "gen-component",
   "license": "MIT",
-  "homepage": "https://github.com/GeorgyDev11111/gen-component",
-  "author": "Anufriev Georgy (https://github.com/GeorgyDev11111)",
-  "repository": "GeorgyDev11111/gen-component",
+  "homepage": "https://github.com/anufriev-dev/gen-component",
+  "author": "Anufriev Georgy",
+  "repository": "https://github.com/anufriev-dev/gen-component",
   "bugs": {
-    "url": "https://github.com/GeorgyDev11111/gen-component/issues"
+    "url": "https://github.com/anufriev-dev/gen-component/issues"
   },
   "bin": {
     "gen-component": "./bin/index.js"
