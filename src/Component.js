@@ -63,7 +63,8 @@ class Component {
 
 	#find_arg_root () {
 		let arg =  utils.findArg([/^--root=.+$/,/^-r=.+$/])
-		return (/^[a-z0-9]+$/).test(arg) ? arg : utils.error(`${red}Error:${reset} [ ${cyan}argument "root" is invalid${reset} ]`)
+		console.log(arg)
+		return (/^[a-z0-9]+$/).test(arg) || "." ? arg : utils.error(`${red}Error:${reset} [ ${cyan}argument "root" is invalid${reset} ]`)
 	}
 
 	// templates
