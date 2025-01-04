@@ -15,6 +15,7 @@ $ gen-component -c=name
 
 ## Links
 
+* [Npm page](https://www.npmjs.com/package/gen-component)
 * [Install](#install)
 * [Flags and Aliases](#flags-and-aliases)
 * [Subfolders](#subfolders)
